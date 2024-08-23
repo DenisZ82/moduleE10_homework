@@ -1,0 +1,279 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+div {
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+button {
+  border-radius: 15px;
+}
+
+li::marker {
+  color: #009ce1;
+}
+
+.header {
+  margin: 2vh 1.5vw;
+}
+
+.grid-header {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  grid-template-rows: auto;
+  gap: 1vw;
+}
+
+.header-item {
+  background-image: linear-gradient(45deg, #d6e5eee2 0%, #9bc9f6e4 60%);
+}
+
+.header-item:nth-child(1) {grid-column: 1/4; text-align: center;}
+.header-item:nth-child(2) {text-align: center;}
+.header-item:nth-child(3) {grid-column: 1/4; padding: 0 1%;}
+.header-item:nth-child(4) {padding: 0 2%;}
+
+.grid-wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(480px, 1fr));
+  grid-template-rows: auto;
+  gap: 1vw;
+}
+
+.grid-item {
+  min-height: 100px;
+}
+
+.item-1 {
+  background-image: linear-gradient(45deg, #d6eee4e2 0%, #9bf6d3e4 60%);
+  padding: 0 3% ;
+}
+
+.item-2, .item-2 > .collapsible {
+  background-image: linear-gradient(45deg, #d6eed9e2 0%, #9bf58de4 60%);
+}
+
+.item-3, .item-3 > .collapsible {
+  background-image: linear-gradient(45deg, #bcc6f0e6 0%, #71c1f2e4 60%);
+}
+
+.item-4, .item-4 > .collapsible {
+  background-image: linear-gradient(45deg, #f0f0bce6 0%, #e5f271e4 60%);
+}
+
+.grid-item, .content-collapsible > p {
+  /* text-align: center; */
+  font-size: 1.2rem;
+}
+
+.photo {
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* ----------------- */
+/* Раскладной блок */
+
+.collapsible {
+  background-color: #777;
+  color: black;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 1.2rem;
+}
+
+.active, .collapsible:hover {
+  background-color: #555;
+}
+.collapsible:after {
+  content: '\002B';
+  color: white;
+  font-weight: bold;
+  float: right;
+  margin-left: 5px;
+}
+
+.active:after {
+  content: "\2212";
+}
+
+.content-collapsible {
+  padding: 0 18px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+  background-color: #f1f1f1;
+}
+
+/* ----------------- */
+/* Временная шкала */
+
+* {
+  box-sizing: border-box;
+}
+
+/* Установите цвет фона */
+/* body {
+  background-color: #474e5d;
+  font-family: Helvetica, sans-serif;
+} */
+
+/* Фактическая временная шкала (вертикальная линейка) */
+.timeline {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Фактическая временная шкала (вертикальная линейка) */
+.timeline::after {
+  content: '';
+  position: absolute;
+  width: 6px;
+  background-color: white;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  margin-left: -3px;
+}
+
+/* Контейнер для содержимого */
+.container {
+  padding: 10px 40px;
+  position: relative;
+  background-color: inherit;
+  width: 50%;
+}
+
+/* Круги на временной шкале */
+.container::after {
+  content: '';
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  right: -17px;
+  background-color: white;
+  border: 4px solid #FF9F55;
+  top: 15px;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+/* Поставьте контейнер слева */
+.left {
+  left: 0;
+}
+
+/* Поставьте контейнер справа */
+.right {
+  left: 50%;
+}
+
+/* Добавьте стрелки к левому контейнеру (указывающие вправо) */
+.left::before {
+  content: " ";
+  height: 0;
+  position: absolute;
+  top: 22px;
+  width: 0;
+  z-index: 1;
+  right: 30px;
+  border: medium solid white;
+  border-width: 10px 0 10px 10px;
+  border-color: transparent transparent transparent white;
+}
+
+/* Добавьте стрелки к правому контейнеру (указывающие влево) */
+.right::before {
+  content: " ";
+  height: 0;
+  position: absolute;
+  top: 22px;
+  width: 0;
+  z-index: 1;
+  left: 30px;
+  border: medium solid white;
+  border-width: 10px 10px 10px 0;
+  border-color: transparent white transparent transparent;
+}
+
+/* Закрепите круг для контейнеров с правой стороны */
+.right::after {
+  left: -16px;
+}
+
+/* Фактическое содержание */
+.content {
+  padding: 20px 30px;
+  background-color: white;
+  position: relative;
+  border-radius: 6px;
+}
+
+/* Медиа-запросы - адаптивная временная шкала на экранах шириной менее 600 пикселей */
+@media screen and (max-width: 600px) {
+/* Расположите временную шкалу слева */
+  .timeline::after {
+  left: 31px;
+}
+
+/* Контейнеры во всю ширину */
+  .container {
+  width: 100%;
+  padding-left: 70px;
+  padding-right: 25px;
+  }
+
+/* Убедитесь, что все стрелки направлены влево */
+  .container::before {
+  left: 60px;
+  border: medium solid white;
+  border-width: 10px 10px 10px 0;
+  border-color: transparent white transparent transparent;
+  }
+
+/* Убедитесь, что все круги находятся в одном и том же месте */
+  .left::after, .right::after {
+    left: 15px;
+  }
+
+/* Сделайте так, чтобы все правые контейнеры вели себя так же, как левые */
+  .right {
+    left: 0%;
+  }
+}
+
+/* ----------------- */
+/* Панель навыков */
+
+/* Убедитесь, что заполнение ведет себя так, как ожидалось */
+* {box-sizing:border-box}
+
+/* Контейнер для баров skill */
+.container-skills {
+  width: 100%; /* Полная ширина */
+  background-color: #ddd; /* Серый фон */
+}
+
+.skills {
+  text-align: right; /* Выровнять текст по правому краю */
+  padding-top: 10px; /* Добавьте верхнее заполнение */
+  padding-bottom: 10px; /* Добавьте нижнее заполнение */
+  color: white; /* Белый цвет текста */
+}
+
+.html {width: 90%; background-color: #aa0465;}
+.css {width: 80%; background-color: #2196F3;}
+.js {width: 70%; background-color: #f4de36;}
+.python {width: 70%; background-color: #8ceb4c;}

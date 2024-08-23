@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <title>Резюме</title>
+        <link href="styles.css" rel="stylesheet" type="text/css">
+    </head>
+
+    <body>
+        <header class="header">
+            <div class="grid-header">
+                <div class="header-item">
+                    <h1>Фамлия Имя Отчество</h1>
+                    <h2>Fullstack-разработчик на Python</h2>
+                </div>
+
+                <div class="header-item">
+                    <img class="photo" src="photo.png" alt="Фото кандидата">
+                </div>
+                
+                <div class="header-item">
+                    <h3>Контакты:</h3>
+                    <p><strong>Телефон:</strong> +7-111-111-1111 <strong>/ Messenger:</strong> t.me/Name <strong>/ e-mail:</strong> name@gmail.com</p>
+
+                </div>
+                <div class="header-item">
+                    <h3>Локация:</h3>
+                    <p>г. N, Россия</p>
+                </div>
+            </div>
+        </header>
+
+        <div class="grid-wrapper">
+            <div class="grid-item item-1">
+                <p class="p-item">
+                    Я — энтузиаст и внимательный к деталям инженер-программист, ищущий начальную должность в компании, 
+                    где я смогу применить свои навыки в написании кода, устранять сложные проблемы и содействовать своевременному завершению проектов.
+                    Стремлюсь стать частью дружной и профессиональной команды, 
+                    в которой я мог бы развивать свои навыки разработки для достижения командных результатов.
+                </p>
+            </div>
+
+            <div class="grid-item item-2">
+                <button class="collapsible">Перечень профессиональных навыков и знаний</button>
+                <div class="content-collapsible">
+                    <ul>
+                        <li>JavaScript, React, Redux, Vue</li>
+                        <li>Python, Django, Redis</li>
+                        <li>SQLite, PostgreSQL</li>                        
+                        <li>HTML, HTML5</li>
+                        <li>CSS3, SASS</li>
+                        <li>Bootstrap</li>
+                        <li>Адаптивная кроссбраузерная вёрстка</li>
+                        <li>Express server</li>
+                        <li>Jest</li>
+                        <li>Enzyme</li>
+                        <li>Storybook</li>
+                        <li>CMS Wordpress</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="grid-item item-3">
+                <button class="collapsible">Уровень ключевых навыков по моему скромному мнению</button>
+                <div class="content-collapsible">
+                    <p>HTML</p>
+                    <div class="container-skills">
+                        <div class="skills html">90%</div>
+                    </div>
+
+                    <p>CSS</p>
+                    <div class="container-skills">
+                        <div class="skills css">80%</div>
+                    </div>
+
+                    <p>JavaScript</p>
+                    <div class="container-skills">
+                        <div class="skills js">70%</div>
+                    </div>
+
+                    <p>Python</p>
+                    <div class="container-skills">
+                        <div class="skills python">70%</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid-item item-4">
+                <button class="collapsible">Профессиональный опыт</button>
+                <div class="content-collapsible">
+                    <div class="timeline">
+                        <div class="container right">
+                            <div class="content">
+                                <h4>2026 - 2028</h4>
+                                <p>Работа в компании <strong>B</strong> на должности ...</p>
+                            </div>
+                        </div>
+                        <div class="container left">
+                            <div class="content">
+                                <h4>2025 - 2026</h4>
+                                <p>Работа в компании <strong>A</strong> на должности ...</p>
+                            </div>
+                        </div>
+                        <div class="container right">
+                            <div class="content">
+                                <h4>2024</h4>
+                                <p>Окончание онлайн-курсов <strong>Skillfactory</strong> ...</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>                
+            </div>
+        </div>
+
+        <script>
+            var coll = document.getElementsByClassName("collapsible");
+            var i;
+            
+            for (i = 0; i < coll.length; i++) {
+              coll[i].addEventListener("click", function() {
+                this.classList.toggle("active");
+                var content = this.nextElementSibling;
+                if (content.style.maxHeight){
+                  content.style.maxHeight = null;
+                } else {
+                  content.style.maxHeight = content.scrollHeight + "px";
+                } 
+              });
+            }
+            </script>
+    </body>
+</html>
