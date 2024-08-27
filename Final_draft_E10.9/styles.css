@@ -1,6 +1,28 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+@font-face {
+  src: url(fonts/FiraSans-Regular.ttf);
+  font-family: "FiraSans Regular";
+}
+
+@font-face {
+  src: url(fonts/FiraSans-Medium.ttf);
+  font-family: "FiraSans Medium";
+}
+
+@font-face {
+  src: url(fonts/FiraSans-LightItalic.ttf);
+  font-family: "FiraSans LightItalic";
+}
+
+h1, h3, h4 {
+  font-family: "FiraSans Medium", Arial, Roboto, Helvetica, -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+h2 {
+  font-family: "FiraSans LightItalic", Arial, Roboto, Helvetica, -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+p, li, button {
+  font-family: "FiraSans Regular", Arial, Roboto, Helvetica, -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
 div {
@@ -60,7 +82,7 @@ li::marker {
   background-image: linear-gradient(45deg, #bcc6f0e6 0%, #71c1f2e4 60%);
 }
 
-.item-4, .item-4 > .collapsible {
+.item-4, .item-4 > .collapsible, .timeline {
   background-image: linear-gradient(45deg, #f0f0bce6 0%, #e5f271e4 60%);
 }
 
